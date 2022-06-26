@@ -1,0 +1,18 @@
+body {
+    background-color: #2d2d2d;
+    color: rgb(234, 234, 234);
+    text-align: center;
+    padding-top: 200px;
+    font-size: 40px;
+    a {
+        color: rgb(154, 154, 154);
+        font-size: 20px;
+        text-decoration: none;
+        &:hover {
+            color: rgb(209, 209, 209);
+        }
+    }
+    nav {
+        display: none;
+    }
+}
