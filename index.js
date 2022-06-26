@@ -76,6 +76,17 @@ http.createServer(async(request, response) => {
             layout = layout.replace(/\{% get script %\}/, ``);
             layout = layout.replace(/\{% get meta %\}/, '');
 
+            await replaca404()
+
+            async function replaca404() {
+                let reg = /\{% get element '(.+?)' %\}/g;
+                let arr = [];
+                arr = layout.match(reg);
+                for (let elem of arr) {
+                    layout = layout.replace(elem, '');
+                }
+            }
+
             res = layout;
         } else {
             res = await fs.promises.readFile(path, 'utf-8');
